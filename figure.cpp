@@ -17,8 +17,8 @@ QRectF Figure::boundingRect() const {
           5,
       (endPoint().y() > startPoint().y() ? startPoint().y() : endPoint().y()) -
           5,
-      qAbs(endPoint().x() - startPoint().x()) + 10,
-      qAbs(endPoint().y() - startPoint().y()) + 10);
+      qAbs(endPoint().x() - startPoint().x()) + 30,
+      qAbs(endPoint().y() - startPoint().y()) + 30);
 }
 
 void Figure::updateRomb() {
@@ -27,8 +27,8 @@ void Figure::updateRomb() {
           5,
       (endPoint().y() > startPoint().y() ? startPoint().y() : endPoint().y()) -
           5,
-      qAbs(endPoint().x() - startPoint().x()) + 10,
-      qAbs(endPoint().y() - startPoint().y()) + 10);
+      qAbs(endPoint().x() - startPoint().x()) + 30,
+      qAbs(endPoint().y() - startPoint().y()) + 30);
 }
 
 void Figure::setStartPoint(const QPointF point) {

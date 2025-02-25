@@ -16,7 +16,7 @@ class Circle : public Figure {
   void paint(QPainter* painter, const QStyleOptionGraphicsItem* option,
              QWidget* widget);
   //QRectF boundingRect() const;
-  double perimer();
+  double perimeter();
   qreal radius;
 };
 

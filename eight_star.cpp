@@ -45,7 +45,7 @@ void Eight_Star::paint(QPainter* painter,
   Q_UNUSED(widget)
 }
 
-double Eight_Star::perimer() {
+double Eight_Star::perimeter() {
   QRectF rect(startPoint(), endPoint());
 
   // Центр прямоугольника

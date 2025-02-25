@@ -19,7 +19,7 @@ class Romb : public Figure {
   // Для Ромба реализуем только саму отрисовку
   void paint(QPainter* painter, const QStyleOptionGraphicsItem* option,
              QWidget* widget) override;
-  double perimer();
+  double perimeter();
 };
 
 #endif  // ROMB_H

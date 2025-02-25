@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "QPushButton"
+#include "figure.h"
 #include "ui_mainwindow.h"
 
 MainWindow::MainWindow(QWidget* parent)
@@ -12,6 +13,10 @@ MainWindow::MainWindow(QWidget* parent)
   ui->graphicsView->setRenderHint(QPainter::Antialiasing);
   ui->graphicsView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
   ui->graphicsView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+
+  // Добавляем QLabel в конструктор
+  perimeterLabel = new QLabel("Perimeter: 0", this);
+  perimeterLabel->setGeometry(300, 10, 150, 30);  // Размещение на окне
 
   // Создаем кнопку для выбора фигуры
   shapeButton = new QToolButton(this);
@@ -46,6 +51,10 @@ MainWindow::MainWindow(QWidget* parent)
   QPushButton* clearButton = new QPushButton("Clear", this);
   clearButton->setGeometry(180, 10, 100, 30);
   connect(clearButton, &QPushButton::clicked, this, &MainWindow::clearScene);
+
+  timer1 = new QTimer();
+  connect(timer1, &QTimer::timeout, this, &MainWindow::updatePerimeter);
+  timer1->start(10);
 
   timer = new QTimer();
   connect(timer, &QTimer::timeout, this, &MainWindow::slotTimer);
@@ -98,4 +107,15 @@ void MainWindow::handleShapeSelection(QAction* action) {
   } else if (shapeName == "Parallelogram") {
     scene->setTypeFigure(PaintScene::ParallelogramType);
   }
+}
+
+void MainWindow::updatePerimeter() {
+  if (scene->GiveSelectedItem() != nullptr) {
+    qDebug() << "Updated perimeter:"
+             << static_cast<Figure*>(scene->GiveSelectedItem())
+                    ->perimeter();  // Отладка
+    perimeterLabel->setText(
+        QString("Perimeter: %1")
+            .arg(static_cast<Figure*>(scene->GiveSelectedItem())->perimeter()));
+  };
 }

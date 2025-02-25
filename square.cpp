@@ -26,7 +26,7 @@ void Square::paint(QPainter* painter, const QStyleOptionGraphicsItem* option,
   Q_UNUSED(widget)
 }
 
-qreal Square::perimer() {
+qreal Square::perimeter() {
   QRectF rect(startPoint(), endPoint());
 
   // Вычисляем длину стороны квадрата

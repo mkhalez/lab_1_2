@@ -40,9 +40,9 @@ void PaintScene::mouseMoveEvent(QGraphicsSceneMouseEvent* event) {
     QPointF pos = event->scenePos();
     selectedCastomItem->setPos(
         QPointF(pos.x() - selectedCastomItem->boundingRect().x() -
-                    selectedCastomItem->boundingRect().width() / 2,
+                    (selectedCastomItem->boundingRect().width() - 30) / 2,
                 pos.y() - selectedCastomItem->boundingRect().y() -
-                    selectedCastomItem->boundingRect().height() / 2));
+                    (selectedCastomItem->boundingRect().height() - 30) / 2));
     return;
   }
   tempFigure->setEndPoint(event->scenePos());

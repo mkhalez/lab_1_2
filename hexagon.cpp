@@ -36,7 +36,7 @@ void Hexagon::paint(QPainter* painter, const QStyleOptionGraphicsItem* option,
   Q_UNUSED(widget)
 }
 
-double Hexagon::perimer() {
+double Hexagon::perimeter() {
   QRectF rect(startPoint(), endPoint());
 
   // Центр прямоугольника

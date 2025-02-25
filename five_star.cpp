@@ -44,7 +44,7 @@ void Five_Star::paint(QPainter* painter, const QStyleOptionGraphicsItem* option,
   Q_UNUSED(widget)
 }
 
-double Five_Star::perimer() {
+double Five_Star::perimeter() {
   QRectF rect(startPoint(), endPoint());
 
   // Центр прямоугольника

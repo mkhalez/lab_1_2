@@ -25,7 +25,7 @@ void Triangle::paint(QPainter* painter, const QStyleOptionGraphicsItem* option,
   Q_UNUSED(widget)
 }
 
-double Triangle::perimer() {
+double Triangle::perimeter() {
   QRectF rect(startPoint(), endPoint());
 
   // Вершины треугольника
@@ -42,5 +42,5 @@ double Triangle::perimer() {
       QLineF(bottomRight, top).length();  // Сторона 3: правая нижняя -> верхняя
 
   // Периметр треугольника: P = сторона1 + сторона2 + сторона3
-  return side1 + side2 + side3;
+  return 10 + side1 + side2 + side3;
 }

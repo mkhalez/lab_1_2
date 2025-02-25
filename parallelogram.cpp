@@ -30,7 +30,7 @@ void Parallelogram::paint(QPainter* painter,
   Q_UNUSED(widget)
 }
 
-double Parallelogram::perimer() {
+double Parallelogram::perimeter() {
   QRectF rect(startPoint(), endPoint());
 
   // Смещение для создания параллелограмма

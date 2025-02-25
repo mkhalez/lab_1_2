@@ -27,7 +27,7 @@ void Romb::paint(QPainter* painter, const QStyleOptionGraphicsItem* option,
   Q_UNUSED(widget)
 }
 
-double Romb::perimer() {
+double Romb::perimeter() {
   QRectF rect(startPoint(), endPoint());
   double width = qAbs(rect.width());
   double height = qAbs(rect.height());

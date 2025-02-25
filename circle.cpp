@@ -21,7 +21,7 @@ void Circle::paint(QPainter* painter, const QStyleOptionGraphicsItem* option,
   Q_UNUSED(widget)
 }
 
-double Circle::perimer() {
+double Circle::perimeter() {
   // Вычисляем радиус как расстояние между начальной и конечной точками
 
   // Периметр круга (длина окружности) = 2 * π * радиус

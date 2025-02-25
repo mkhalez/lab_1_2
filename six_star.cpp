@@ -45,7 +45,7 @@ void Six_Star::paint(QPainter* painter, const QStyleOptionGraphicsItem* option,
   Q_UNUSED(widget)
 }
 
-double Six_Star::perimer() {
+double Six_Star::perimeter() {
   QRectF rect(startPoint(), endPoint());
 
   // Центр прямоугольника

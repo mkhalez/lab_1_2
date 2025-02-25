@@ -15,7 +15,7 @@ class Triangle : public Figure {
  private:
   void paint(QPainter* painter, const QStyleOptionGraphicsItem* option,
              QWidget* widget);
-  double perimer();
+  double perimeter();
 };
 
 #endif  // TRIANGLE_H

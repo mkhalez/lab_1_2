@@ -15,7 +15,7 @@ class Parallelogram : public Figure {
  private:
   void paint(QPainter* painter, const QStyleOptionGraphicsItem* option,
              QWidget* widget);
-  double perimer();
+  double perimeter();
 };
 
 #endif
