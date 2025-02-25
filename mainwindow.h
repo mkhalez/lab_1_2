@@ -2,8 +2,10 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QMenu>
 #include <QResizeEvent>
 #include <QTimer>
+#include <QToolButton>
 
 #include "paintscene.h"
 
@@ -22,21 +24,16 @@ class MainWindow : public QMainWindow {
   Ui::MainWindow* ui;
   PaintScene* scene;
   QTimer* timer;
+  QToolButton* shapeButton;  // Кнопка для выбора фигуры
+  QMenu* shapeMenu;          // Меню с выбором фигур
 
  private:
   void resizeEvent(QResizeEvent* event);
 
  private slots:
   void slotTimer();
-  void handleRombButtonClick();
-  void handleSquareButtonClick();
-  void handleTriangleButtonClick();
-  void handleRectangleButtonClick();
-  void handleCircleButtonClick();
-  void handleFive_StarButtonClick();
-  void handleSix_StarButtonClick();
-  void handleEight_StarButtonClick();
-  void handleHexagonButtonClick();
+  void handleShapeSelection(
+      QAction* action);  // Слот для обработки выбора фигуры
   void clearScene();
 };
 

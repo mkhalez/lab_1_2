@@ -13,9 +13,9 @@ class Triangle : public Figure {
   ~Triangle();
 
  private:
-  // Для Ромба реализуем только саму отрисовку
   void paint(QPainter* painter, const QStyleOptionGraphicsItem* option,
              QWidget* widget);
+  double perimer();
 };
 
 #endif  // TRIANGLE_H

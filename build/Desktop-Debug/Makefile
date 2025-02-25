@@ -60,6 +60,7 @@ SOURCES       = ../../circle.cpp \
 		../../main.cpp \
 		../../mainwindow.cpp \
 		../../paintscene.cpp \
+		../../parallelogram.cpp \
 		../../rectangle.cpp \
 		../../romb.cpp \
 		../../six_star.cpp \
@@ -71,6 +72,7 @@ SOURCES       = ../../circle.cpp \
 		moc_hexagon.cpp \
 		moc_mainwindow.cpp \
 		moc_paintscene.cpp \
+		moc_parallelogram.cpp \
 		moc_rectangle.cpp \
 		moc_romb.cpp \
 		moc_six_star.cpp \
@@ -84,6 +86,7 @@ OBJECTS       = circle.o \
 		main.o \
 		mainwindow.o \
 		paintscene.o \
+		parallelogram.o \
 		rectangle.o \
 		romb.o \
 		six_star.o \
@@ -96,6 +99,7 @@ OBJECTS       = circle.o \
 		moc_hexagon.o \
 		moc_mainwindow.o \
 		moc_paintscene.o \
+		moc_parallelogram.o \
 		moc_rectangle.o \
 		moc_romb.o \
 		moc_six_star.o \
@@ -174,6 +178,7 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt6/mkspecs/features/spec_pre.prf \
 		../../hexagon.h \
 		../../mainwindow.h \
 		../../paintscene.h \
+		../../parallelogram.h \
 		../../rectangle.h \
 		../../romb.h \
 		../../six_star.h \
@@ -186,6 +191,7 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt6/mkspecs/features/spec_pre.prf \
 		../../main.cpp \
 		../../mainwindow.cpp \
 		../../paintscene.cpp \
+		../../parallelogram.cpp \
 		../../rectangle.cpp \
 		../../romb.cpp \
 		../../six_star.cpp \
@@ -358,8 +364,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/x86_64-linux-gnu/qt6/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../../circle.h ../../eight_star.h ../../figure.h ../../five_star.h ../../hexagon.h ../../mainwindow.h ../../paintscene.h ../../rectangle.h ../../romb.h ../../six_star.h ../../square.h ../../triangle.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../../circle.cpp ../../eight_star.cpp ../../figure.cpp ../../five_star.cpp ../../hexagon.cpp ../../main.cpp ../../mainwindow.cpp ../../paintscene.cpp ../../rectangle.cpp ../../romb.cpp ../../six_star.cpp ../../square.cpp ../../triangle.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../../circle.h ../../eight_star.h ../../figure.h ../../five_star.h ../../hexagon.h ../../mainwindow.h ../../paintscene.h ../../parallelogram.h ../../rectangle.h ../../romb.h ../../six_star.h ../../square.h ../../triangle.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../../circle.cpp ../../eight_star.cpp ../../figure.cpp ../../five_star.cpp ../../hexagon.cpp ../../main.cpp ../../mainwindow.cpp ../../paintscene.cpp ../../parallelogram.cpp ../../rectangle.cpp ../../romb.cpp ../../six_star.cpp ../../square.cpp ../../triangle.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../../mainwindow.ui $(DISTDIR)/
 
 
@@ -392,9 +398,9 @@ compiler_moc_predefs_clean:
 moc_predefs.h: /usr/lib/x86_64-linux-gnu/qt6/mkspecs/features/data/dummy.cpp
 	g++ -pipe -g -std=gnu++1z -Wall -Wextra -fPIC -dM -E -o moc_predefs.h /usr/lib/x86_64-linux-gnu/qt6/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc_circle.cpp moc_eight_star.cpp moc_figure.cpp moc_five_star.cpp moc_hexagon.cpp moc_mainwindow.cpp moc_paintscene.cpp moc_rectangle.cpp moc_romb.cpp moc_six_star.cpp moc_square.cpp moc_triangle.cpp
+compiler_moc_header_make_all: moc_circle.cpp moc_eight_star.cpp moc_figure.cpp moc_five_star.cpp moc_hexagon.cpp moc_mainwindow.cpp moc_paintscene.cpp moc_parallelogram.cpp moc_rectangle.cpp moc_romb.cpp moc_six_star.cpp moc_square.cpp moc_triangle.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_circle.cpp moc_eight_star.cpp moc_figure.cpp moc_five_star.cpp moc_hexagon.cpp moc_mainwindow.cpp moc_paintscene.cpp moc_rectangle.cpp moc_romb.cpp moc_six_star.cpp moc_square.cpp moc_triangle.cpp
+	-$(DEL_FILE) moc_circle.cpp moc_eight_star.cpp moc_figure.cpp moc_five_star.cpp moc_hexagon.cpp moc_mainwindow.cpp moc_paintscene.cpp moc_parallelogram.cpp moc_rectangle.cpp moc_romb.cpp moc_six_star.cpp moc_square.cpp moc_triangle.cpp
 moc_circle.cpp: ../../circle.h \
 		../../figure.h \
 		moc_predefs.h \
@@ -436,6 +442,12 @@ moc_paintscene.cpp: ../../paintscene.h \
 		moc_predefs.h \
 		/usr/lib/qt6/libexec/moc
 	/usr/lib/qt6/libexec/moc $(DEFINES) --include /home/mkh-alez/task_2/build/Desktop-Debug/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++ -I/home/mkh-alez/task_2 -I/usr/include/x86_64-linux-gnu/qt6 -I/usr/include/x86_64-linux-gnu/qt6/QtWidgets -I/usr/include/x86_64-linux-gnu/qt6/QtGui -I/usr/include/x86_64-linux-gnu/qt6/QtCore -I. -I/usr/include/c++/13 -I/usr/include/x86_64-linux-gnu/c++/13 -I/usr/include/c++/13/backward -I/usr/lib/gcc/x86_64-linux-gnu/13/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../../paintscene.h -o moc_paintscene.cpp
+
+moc_parallelogram.cpp: ../../parallelogram.h \
+		../../figure.h \
+		moc_predefs.h \
+		/usr/lib/qt6/libexec/moc
+	/usr/lib/qt6/libexec/moc $(DEFINES) --include /home/mkh-alez/task_2/build/Desktop-Debug/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++ -I/home/mkh-alez/task_2 -I/usr/include/x86_64-linux-gnu/qt6 -I/usr/include/x86_64-linux-gnu/qt6/QtWidgets -I/usr/include/x86_64-linux-gnu/qt6/QtGui -I/usr/include/x86_64-linux-gnu/qt6/QtCore -I. -I/usr/include/c++/13 -I/usr/include/x86_64-linux-gnu/c++/13 -I/usr/include/c++/13/backward -I/usr/lib/gcc/x86_64-linux-gnu/13/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../../parallelogram.h -o moc_parallelogram.cpp
 
 moc_rectangle.cpp: ../../rectangle.h \
 		../../figure.h \
@@ -531,6 +543,10 @@ paintscene.o: ../../paintscene.cpp ../../paintscene.h \
 		../../triangle.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o paintscene.o ../../paintscene.cpp
 
+parallelogram.o: ../../parallelogram.cpp ../../parallelogram.h \
+		../../figure.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o parallelogram.o ../../parallelogram.cpp
+
 rectangle.o: ../../rectangle.cpp ../../rectangle.h \
 		../../figure.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o rectangle.o ../../rectangle.cpp
@@ -571,6 +587,9 @@ moc_mainwindow.o: moc_mainwindow.cpp
 
 moc_paintscene.o: moc_paintscene.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_paintscene.o moc_paintscene.cpp
+
+moc_parallelogram.o: moc_parallelogram.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_parallelogram.o moc_parallelogram.cpp
 
 moc_rectangle.o: moc_rectangle.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_rectangle.o moc_rectangle.cpp

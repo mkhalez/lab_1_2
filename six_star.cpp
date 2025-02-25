@@ -44,3 +44,42 @@ void Six_Star::paint(QPainter* painter, const QStyleOptionGraphicsItem* option,
   Q_UNUSED(option)
   Q_UNUSED(widget)
 }
+
+double Six_Star::perimer() {
+  QRectF rect(startPoint(), endPoint());
+
+  // Центр прямоугольника
+  QPointF center = rect.center();
+
+  // Радиус звезды
+  double radius = qMin(rect.width(), rect.height()) / 2;
+
+  // Угол между лучами звезды
+  double angle = 2 * M_PI / 6;
+
+  // Создаем полигон для звезды
+  QPolygonF polygon;
+
+  for (int i = 0; i < 6; ++i) {
+    // Внешняя точка
+    QPointF outerPoint(center.x() + radius * cos(i * angle - M_PI / 2),
+                       center.y() + radius * sin(i * angle - M_PI / 2));
+    polygon << outerPoint;
+
+    // Внутренняя точка
+    QPointF innerPoint(
+        center.x() + (radius / 2) * cos((i + 0.5) * angle - M_PI / 2),
+        center.y() + (radius / 2) * sin((i + 0.5) * angle - M_PI / 2));
+    polygon << innerPoint;
+  }
+
+  // Вычисляем периметр как сумму длин всех сторон
+  double perimeter = 0.0;
+  for (int i = 0; i < polygon.size(); ++i) {
+    int nextIndex =
+        (i + 1) % polygon.size();  // Следующая точка (с замыканием на первую)
+    perimeter += QLineF(polygon[i], polygon[nextIndex]).length();
+  }
+
+  return perimeter;
+}

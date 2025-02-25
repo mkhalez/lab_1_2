@@ -15,6 +15,9 @@ class Circle : public Figure {
  private:
   void paint(QPainter* painter, const QStyleOptionGraphicsItem* option,
              QWidget* widget);
+  //QRectF boundingRect() const;
+  double perimer();
+  qreal radius;
 };
 
 #endif  // SQUARE_H

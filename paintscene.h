@@ -15,8 +15,11 @@ class PaintScene : public QGraphicsScene {
   explicit PaintScene(QObject* parent = 0);
   ~PaintScene();
 
+  Figure* currentFigure() const;
+
   int typeFigure() const;  // Возвращение текущего типа
   void setTypeFigure(const int type);  // Установка текущего типа
+  Figure* GiveSelectedItem();
 
   // Перечисление типов используемых фигур
   enum FigureTypes {
@@ -28,17 +31,21 @@ class PaintScene : public QGraphicsScene {
     Five_StarType,
     Six_StarType,
     Eight_StarType,
-    HexagonType
+    HexagonType,
+    ParallelogramType,
+    None
   };
 
  signals:
   void typeFigureChanged();  // Сигнал об изменении типа текущей фигуры
+  void perimeterChanged(double perimeter);
 
  private:
   /* Объект для временного хранения рисуемой фигуры
      * Является объектом базового класса для всех трёх типов фигур в примере
      * */
   Figure* tempFigure;
+  Figure* selectedCastomItem;
   int m_typeFigure;  // текущий тип фигуры
 
  private:

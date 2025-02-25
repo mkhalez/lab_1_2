@@ -17,6 +17,7 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     paintscene.cpp \
+    parallelogram.cpp \
     rectangle.cpp \
     romb.cpp \
     six_star.cpp \
@@ -31,6 +32,7 @@ HEADERS += \
     hexagon.h \
     mainwindow.h \
     paintscene.h \
+    parallelogram.h \
     rectangle.h \
     romb.h \
     six_star.h \

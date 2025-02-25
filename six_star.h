@@ -16,6 +16,7 @@ class Six_Star : public Figure {
   // Для Ромба реализуем только саму отрисовку
   void paint(QPainter* painter, const QStyleOptionGraphicsItem* option,
              QWidget* widget);
+  double perimer();
 };
 
 #endif  // SQUARE_H

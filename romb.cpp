@@ -26,3 +26,15 @@ void Romb::paint(QPainter* painter, const QStyleOptionGraphicsItem* option,
   Q_UNUSED(option)
   Q_UNUSED(widget)
 }
+
+double Romb::perimer() {
+  QRectF rect(startPoint(), endPoint());
+  double width = qAbs(rect.width());
+  double height = qAbs(rect.height());
+
+  // Периметр ромба равен 4 * длина стороны
+  // Длина стороны ромба вычисляется как половина диагонали
+  double side =
+      qSqrt((width / 2.0) * (width / 2.0) + (height / 2.0) * (height / 2.0));
+  return 4.0 * side;
+}

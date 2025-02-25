@@ -25,3 +25,10 @@ void Rectangle::paint(QPainter* painter, const QStyleOptionGraphicsItem* option,
   Q_UNUSED(option)
   Q_UNUSED(widget)
 }
+
+double Rectangle::perimer() {
+  QRectF rect(startPoint(), endPoint());
+  double width = qAbs(rect.width());
+  double height = qAbs(rect.height());
+  return 2.0 * (width + height);
+}

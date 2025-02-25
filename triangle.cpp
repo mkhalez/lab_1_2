@@ -1,4 +1,5 @@
 #include "triangle.h"
+#include <QLineF>
 #include <QPainter>
 
 Triangle::Triangle(QPointF point, QObject* parent) : Figure(point, parent) {
@@ -22,4 +23,24 @@ void Triangle::paint(QPainter* painter, const QStyleOptionGraphicsItem* option,
 
   Q_UNUSED(option)
   Q_UNUSED(widget)
+}
+
+double Triangle::perimer() {
+  QRectF rect(startPoint(), endPoint());
+
+  // Вершины треугольника
+  QPointF top(rect.center().x(), rect.top());  // Верхняя вершина
+  QPointF bottomLeft(rect.left(), rect.bottom());  // Левая нижняя вершина
+  QPointF bottomRight(rect.right(), rect.bottom());  // Правая нижняя вершина
+
+  // Вычисляем длины сторон
+  double side1 =
+      QLineF(top, bottomLeft).length();  // Сторона 1: верхняя -> левая нижняя
+  double side2 = QLineF(bottomLeft, bottomRight)
+                     .length();  // Сторона 2: левая нижняя -> правая нижняя
+  double side3 =
+      QLineF(bottomRight, top).length();  // Сторона 3: правая нижняя -> верхняя
+
+  // Периметр треугольника: P = сторона1 + сторона2 + сторона3
+  return side1 + side2 + side3;
 }

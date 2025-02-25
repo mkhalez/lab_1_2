@@ -4,9 +4,12 @@
 #include <QDebug>
 #include <QGraphicsItem>
 #include <QObject>
+#include <QString>
 
 class Figure : public QObject, public QGraphicsItem {
   Q_OBJECT
+
+  Q_INTERFACES(QGraphicsItem)
   // Свойство стартовой точки, относительно которой отрисовываем фигуру
   Q_PROPERTY(QPointF startPoint READ startPoint WRITE setStartPoint NOTIFY
                  pointChanged)
@@ -20,8 +23,11 @@ class Figure : public QObject, public QGraphicsItem {
   QPointF startPoint() const;  // Стартовая точка
   QPointF endPoint() const;    // Конечная точка
 
+  QRectF boundingRect() const;
+
   void setStartPoint(const QPointF point);  // Установка стартовой точки
   void setEndPoint(const QPointF point);  // Установка конечной точки
+  virtual double perimeter() { return 0.0; }
 
  signals:
   void pointChanged();  // Сигнал об изменении точки
@@ -30,7 +36,7 @@ class Figure : public QObject, public QGraphicsItem {
   QPointF m_startPoint;  // Стартовая точка
   QPointF m_endPoint;    // Конечная точка
 
-  QRectF boundingRect() const;  // Область, в которой содержится фигура
+  // Область, в которой содержится фигура
 
  public slots:
   void updateRomb();  // Слот обновления области, в которой содержится фигура

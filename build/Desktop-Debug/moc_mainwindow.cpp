@@ -26,20 +26,14 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 namespace {
 struct qt_meta_stringdata_MainWindow_t {
-    uint offsetsAndSizes[26];
+    uint offsetsAndSizes[14];
     char stringdata0[11];
     char stringdata1[10];
     char stringdata2[1];
-    char stringdata3[22];
-    char stringdata4[24];
-    char stringdata5[26];
-    char stringdata6[27];
-    char stringdata7[24];
-    char stringdata8[27];
-    char stringdata9[26];
-    char stringdata10[28];
-    char stringdata11[25];
-    char stringdata12[11];
+    char stringdata3[21];
+    char stringdata4[9];
+    char stringdata5[7];
+    char stringdata6[11];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_MainWindow_t::offsetsAndSizes) + ofs), len 
@@ -48,29 +42,17 @@ Q_CONSTINIT static const qt_meta_stringdata_MainWindow_t qt_meta_stringdata_Main
         QT_MOC_LITERAL(0, 10),  // "MainWindow"
         QT_MOC_LITERAL(11, 9),  // "slotTimer"
         QT_MOC_LITERAL(21, 0),  // ""
-        QT_MOC_LITERAL(22, 21),  // "handleRombButtonClick"
-        QT_MOC_LITERAL(44, 23),  // "handleSquareButtonClick"
-        QT_MOC_LITERAL(68, 25),  // "handleTriangleButtonClick"
-        QT_MOC_LITERAL(94, 26),  // "handleRectangleButtonClick"
-        QT_MOC_LITERAL(121, 23),  // "handleCircleButtonClick"
-        QT_MOC_LITERAL(145, 26),  // "handleFive_StarButtonClick"
-        QT_MOC_LITERAL(172, 25),  // "handleSix_StarButtonClick"
-        QT_MOC_LITERAL(198, 27),  // "handleEight_StarButtonClick"
-        QT_MOC_LITERAL(226, 24),  // "handleHexagonButtonClick"
-        QT_MOC_LITERAL(251, 10)   // "clearScene"
+        QT_MOC_LITERAL(22, 20),  // "handleShapeSelection"
+        QT_MOC_LITERAL(43, 8),  // "QAction*"
+        QT_MOC_LITERAL(52, 6),  // "action"
+        QT_MOC_LITERAL(59, 10)   // "clearScene"
     },
     "MainWindow",
     "slotTimer",
     "",
-    "handleRombButtonClick",
-    "handleSquareButtonClick",
-    "handleTriangleButtonClick",
-    "handleRectangleButtonClick",
-    "handleCircleButtonClick",
-    "handleFive_StarButtonClick",
-    "handleSix_StarButtonClick",
-    "handleEight_StarButtonClick",
-    "handleHexagonButtonClick",
+    "handleShapeSelection",
+    "QAction*",
+    "action",
     "clearScene"
 };
 #undef QT_MOC_LITERAL
@@ -82,7 +64,7 @@ Q_CONSTINIT static const uint qt_meta_data_MainWindow[] = {
       10,       // revision
        0,       // classname
        0,    0, // classinfo
-      11,   14, // methods
+       3,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -90,29 +72,13 @@ Q_CONSTINIT static const uint qt_meta_data_MainWindow[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,   80,    2, 0x08,    1 /* Private */,
-       3,    0,   81,    2, 0x08,    2 /* Private */,
-       4,    0,   82,    2, 0x08,    3 /* Private */,
-       5,    0,   83,    2, 0x08,    4 /* Private */,
-       6,    0,   84,    2, 0x08,    5 /* Private */,
-       7,    0,   85,    2, 0x08,    6 /* Private */,
-       8,    0,   86,    2, 0x08,    7 /* Private */,
-       9,    0,   87,    2, 0x08,    8 /* Private */,
-      10,    0,   88,    2, 0x08,    9 /* Private */,
-      11,    0,   89,    2, 0x08,   10 /* Private */,
-      12,    0,   90,    2, 0x08,   11 /* Private */,
+       1,    0,   32,    2, 0x08,    1 /* Private */,
+       3,    1,   33,    2, 0x08,    2 /* Private */,
+       6,    0,   36,    2, 0x08,    4 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
+    QMetaType::Void, 0x80000000 | 4,    5,
     QMetaType::Void,
 
        0        // eod
@@ -129,24 +95,9 @@ Q_CONSTINIT const QMetaObject MainWindow::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<MainWindow, std::true_type>,
         // method 'slotTimer'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'handleRombButtonClick'
+        // method 'handleShapeSelection'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'handleSquareButtonClick'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'handleTriangleButtonClick'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'handleRectangleButtonClick'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'handleCircleButtonClick'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'handleFive_StarButtonClick'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'handleSix_StarButtonClick'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'handleEight_StarButtonClick'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'handleHexagonButtonClick'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<QAction *, std::false_type>,
         // method 'clearScene'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
@@ -160,20 +111,22 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         (void)_t;
         switch (_id) {
         case 0: _t->slotTimer(); break;
-        case 1: _t->handleRombButtonClick(); break;
-        case 2: _t->handleSquareButtonClick(); break;
-        case 3: _t->handleTriangleButtonClick(); break;
-        case 4: _t->handleRectangleButtonClick(); break;
-        case 5: _t->handleCircleButtonClick(); break;
-        case 6: _t->handleFive_StarButtonClick(); break;
-        case 7: _t->handleSix_StarButtonClick(); break;
-        case 8: _t->handleEight_StarButtonClick(); break;
-        case 9: _t->handleHexagonButtonClick(); break;
-        case 10: _t->clearScene(); break;
+        case 1: _t->handleShapeSelection((*reinterpret_cast< std::add_pointer_t<QAction*>>(_a[1]))); break;
+        case 2: _t->clearScene(); break;
         default: ;
         }
+    } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
+        switch (_id) {
+        default: *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType(); break;
+        case 1:
+            switch (*reinterpret_cast<int*>(_a[1])) {
+            default: *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType(); break;
+            case 0:
+                *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType::fromType< QAction* >(); break;
+            }
+            break;
+        }
     }
-    (void)_a;
 }
 
 const QMetaObject *MainWindow::metaObject() const
@@ -195,13 +148,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 11)
+        if (_id < 3)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 11;
+        _id -= 3;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 11)
-            *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 11;
+        if (_id < 3)
+            qt_static_metacall(this, _c, _id, _a);
+        _id -= 3;
     }
     return _id;
 }

@@ -3,6 +3,7 @@
 
 Figure::Figure(QPointF point, QObject* parent)
     : QObject(parent), QGraphicsItem() {
+  this->setFlag(QGraphicsItem::ItemIsMovable);  //Added
   this->setStartPoint(mapFromScene(point));
   this->setEndPoint(mapFromScene(point));
   connect(this, &Figure::pointChanged, this, &Figure::updateRomb);
