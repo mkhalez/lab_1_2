@@ -30,25 +30,19 @@ Figure* PaintScene::GiveSelectedItem() {
 }
 
 void PaintScene::mouseMoveEvent(QGraphicsSceneMouseEvent* event) {
-  /* Устанавливаем конечную координату положения мыши
-     * в текущую отрисовываемую фигуру
-     * */
   if (tempFigure == nullptr) {
-    if (selectedCastomItem != nullptr)
-      qDebug() << event->scenePos() << ' '
-               << selectedCastomItem->boundingRect();
-    QPointF pos = event->scenePos();
-    selectedCastomItem->setPos(
-        QPointF(pos.x() - selectedCastomItem->boundingRect().x() -
-                    (selectedCastomItem->boundingRect().width() - 30) / 2,
-                pos.y() - selectedCastomItem->boundingRect().y() -
-                    (selectedCastomItem->boundingRect().height() - 30) / 2));
+    if (selectedCastomItem != nullptr) {
+      QPointF pos = event->scenePos();
+      selectedCastomItem->setPos(
+          QPointF(pos.x() - selectedCastomItem->boundingRect().x() -
+                      (selectedCastomItem->boundingRect().width() - 30) / 2,
+                  pos.y() - selectedCastomItem->boundingRect().y() -
+                      (selectedCastomItem->boundingRect().height() - 30) / 2));
+      emit centerOfMassChanged(selectedCastomItem->boundingRect().center());
+    }
     return;
   }
   tempFigure->setEndPoint(event->scenePos());
-  /* Обновляем содержимое сцены,
-     * необходимо для устранения артефактов при отрисовке фигур
-     * */
   this->update(QRectF(0, 0, this->width(), this->height()));
 }
 
@@ -136,4 +130,8 @@ void PaintScene::mousePressEvent(QGraphicsSceneMouseEvent* event) {
   qDebug() << (selectedCastomItem == nullptr);
 
   //selectedCastomItem->setPos(event->scenePos());
+}
+
+void PaintScene::setSelectedItem(Figure* item) {
+  selectedCastomItem = item;
 }

@@ -28,6 +28,7 @@ class Figure : public QObject, public QGraphicsItem {
   void setStartPoint(const QPointF point);  // Установка стартовой точки
   void setEndPoint(const QPointF point);  // Установка конечной точки
   virtual double perimeter() { return 0.0; }
+  virtual double area() { return 0.0; }
 
  signals:
   void pointChanged();  // Сигнал об изменении точки

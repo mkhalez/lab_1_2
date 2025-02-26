@@ -20,6 +20,7 @@ class Romb : public Figure {
   void paint(QPainter* painter, const QStyleOptionGraphicsItem* option,
              QWidget* widget) override;
   double perimeter();
+  double area();
 };
 
 #endif  // ROMB_H

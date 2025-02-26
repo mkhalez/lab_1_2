@@ -38,7 +38,11 @@ class PaintScene : public QGraphicsScene {
 
  signals:
   void typeFigureChanged();  // Сигнал об изменении типа текущей фигуры
-                             //void perimeterChanged(double perimeter);
+      //void perimeterChanged(double perimeter);
+  void centerOfMassChanged(const QPointF& center);
+
+ public:
+  void setSelectedItem(Figure* item);
 
  private:
   /* Объект для временного хранения рисуемой фигуры

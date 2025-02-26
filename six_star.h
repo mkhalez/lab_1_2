@@ -17,6 +17,7 @@ class Six_Star : public Figure {
   void paint(QPainter* painter, const QStyleOptionGraphicsItem* option,
              QWidget* widget);
   double perimeter();
+  double area();
 };
 
 #endif  // SQUARE_H

@@ -42,5 +42,18 @@ double Triangle::perimeter() {
       QLineF(bottomRight, top).length();  // Сторона 3: правая нижняя -> верхняя
 
   // Периметр треугольника: P = сторона1 + сторона2 + сторона3
-  return 10 + side1 + side2 + side3;
+  return side1 + side2 + side3;
+}
+
+double Triangle::area() {
+  QRectF rect(startPoint(), endPoint());
+
+  // Основание треугольника (ширина прямоугольника)
+  double base = rect.width();
+
+  // Высота треугольника (высота прямоугольника)
+  double height = rect.height();
+
+  // Площадь треугольника: (основание * высота) / 2
+  return (base * height) / 2.0;
 }

@@ -12,9 +12,10 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QGraphicsView>
-#include <QtWidgets/QGridLayout>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
+#include <QtWidgets/QSlider>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -23,28 +24,37 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralwidget;
-    QGridLayout *gridLayout;
     QGraphicsView *graphicsView;
+    QSlider *horizontalSlider;
+    QLabel *label;
+    QSlider *horizontalSlider_2;
     QMenuBar *menubar;
 
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(800, 600);
+        MainWindow->resize(993, 600);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
-        gridLayout = new QGridLayout(centralwidget);
-        gridLayout->setObjectName("gridLayout");
         graphicsView = new QGraphicsView(centralwidget);
         graphicsView->setObjectName("graphicsView");
-
-        gridLayout->addWidget(graphicsView, 0, 0, 1, 1);
-
+        graphicsView->setGeometry(QRect(11, 11, 771, 541));
+        horizontalSlider = new QSlider(centralwidget);
+        horizontalSlider->setObjectName("horizontalSlider");
+        horizontalSlider->setGeometry(QRect(790, 90, 160, 18));
+        horizontalSlider->setOrientation(Qt::Horizontal);
+        label = new QLabel(centralwidget);
+        label->setObjectName("label");
+        label->setGeometry(QRect(790, 60, 79, 22));
+        horizontalSlider_2 = new QSlider(centralwidget);
+        horizontalSlider_2->setObjectName("horizontalSlider_2");
+        horizontalSlider_2->setGeometry(QRect(790, 160, 160, 18));
+        horizontalSlider_2->setOrientation(Qt::Horizontal);
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 800, 27));
+        menubar->setGeometry(QRect(0, 0, 993, 27));
         MainWindow->setMenuBar(menubar);
 
         retranslateUi(MainWindow);
@@ -55,6 +65,7 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
+        label->setText(QCoreApplication::translate("MainWindow", "\320\237\320\276\320\262\320\276\321\200\320\276\321\202", nullptr));
     } // retranslateUi
 
 };

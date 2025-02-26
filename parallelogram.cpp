@@ -52,3 +52,21 @@ double Parallelogram::perimeter() {
   // Периметр — сумма длин всех сторон
   return side1 + side2 + side3 + side4;
 }
+
+double Parallelogram::area() {
+  QRectF rect(startPoint(), endPoint());
+
+  // Смещение для создания параллелограмма
+  double offset = rect.width() / 3.0;
+
+  // Длина основания (нижняя сторона)
+  double base = QLineF(QPointF(rect.left(), rect.bottom()),
+                       QPointF(rect.right() - offset, rect.bottom()))
+                    .length();
+
+  // Высота (расстояние между верхней и нижней сторонами)
+  double height = rect.height();
+
+  // Площадь параллелограмма
+  return base * height;
+}

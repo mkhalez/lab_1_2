@@ -32,3 +32,10 @@ double Rectangle::perimeter() {
   double height = qAbs(rect.height());
   return 2.0 * (width + height);
 }
+
+double Rectangle::area() {
+  QRectF rect(startPoint(), endPoint());
+  double width = qAbs(rect.width());
+  double height = qAbs(rect.height());
+  return width * height;
+}

@@ -25,5 +25,9 @@ double Circle::perimeter() {
   // Вычисляем радиус как расстояние между начальной и конечной точками
 
   // Периметр круга (длина окружности) = 2 * π * радиус
-  return 2.0 * M_PI * radius;
+  return 2.0 * M_PI * (endPoint().x() - startPoint().x());
+}
+
+double Circle::area() {
+  return M_PI * M_PI * (endPoint().x() - startPoint().x());
 }

@@ -26,7 +26,7 @@ void Square::paint(QPainter* painter, const QStyleOptionGraphicsItem* option,
   Q_UNUSED(widget)
 }
 
-qreal Square::perimeter() {
+double Square::perimeter() {
   QRectF rect(startPoint(), endPoint());
 
   // Вычисляем длину стороны квадрата
@@ -34,4 +34,14 @@ qreal Square::perimeter() {
 
   // Периметр квадрата: P = 4 * длина стороны
   return 4 * side;
+}
+
+qreal Square::area() {
+  QRectF rect(startPoint(), endPoint());
+
+  // Вычисляем длину стороны квадрата
+  double side = qAbs(rect.width());  // Ширина прямоугольника (сторона квадрата)
+
+  // Периметр квадрата: P = 4 * длина стороны
+  return side * side;
 }

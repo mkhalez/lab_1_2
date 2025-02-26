@@ -68,3 +68,18 @@ double Hexagon::perimeter() {
 
   return perimeter;
 }
+
+double Hexagon::area() {
+  QRectF rect(startPoint(), endPoint());
+
+  // Центр прямоугольника
+  QPointF center = rect.center();
+
+  // Радиус шестиугольника (половина минимальной стороны прямоугольника)
+  double radius = qMin(rect.width(), rect.height()) / 2;
+
+  // Вычисляем площадь по формуле для правильного шестиугольника
+  double area = (3 * sqrt(3) / 2) * radius * radius;
+
+  return area;
+}

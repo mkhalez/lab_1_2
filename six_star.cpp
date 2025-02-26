@@ -83,3 +83,18 @@ double Six_Star::perimeter() {
 
   return perimeter;
 }
+
+double Six_Star::area() {
+  QRectF rect(startPoint(), endPoint());
+
+  // Центр прямоугольника
+  QPointF center = rect.center();
+
+  // Радиус звезды (расстояние от центра до внешней вершины)
+  double radius = qMin(rect.width(), rect.height()) / 2;
+
+  // Площадь шестиконечной звезды
+  double area = 3 * (sqrt(3) / 2) * radius * radius;
+
+  return area;
+}

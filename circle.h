@@ -17,6 +17,7 @@ class Circle : public Figure {
              QWidget* widget);
   //QRectF boundingRect() const;
   double perimeter();
+  double area();
   qreal radius;
 };
 

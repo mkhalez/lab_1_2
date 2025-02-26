@@ -27,7 +27,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 namespace {
 struct qt_meta_stringdata_MainWindow_t {
-    uint offsetsAndSizes[16];
+    uint offsetsAndSizes[28];
     char stringdata0[11];
     char stringdata1[10];
     char stringdata2[1];
@@ -36,6 +36,12 @@ struct qt_meta_stringdata_MainWindow_t {
     char stringdata5[7];
     char stringdata6[11];
     char stringdata7[16];
+    char stringdata8[11];
+    char stringdata9[19];
+    char stringdata10[24];
+    char stringdata11[33];
+    char stringdata12[6];
+    char stringdata13[35];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_MainWindow_t::offsetsAndSizes) + ofs), len 
@@ -48,7 +54,13 @@ Q_CONSTINIT static const qt_meta_stringdata_MainWindow_t qt_meta_stringdata_Main
         QT_MOC_LITERAL(43, 8),  // "QAction*"
         QT_MOC_LITERAL(52, 6),  // "action"
         QT_MOC_LITERAL(59, 10),  // "clearScene"
-        QT_MOC_LITERAL(70, 15)   // "updatePerimeter"
+        QT_MOC_LITERAL(70, 15),  // "updatePerimeter"
+        QT_MOC_LITERAL(86, 10),  // "updateArea"
+        QT_MOC_LITERAL(97, 18),  // "updateCenterOfMass"
+        QT_MOC_LITERAL(116, 23),  // "moveFigureToCoordinates"
+        QT_MOC_LITERAL(140, 32),  // "on_horizontalSlider_valueChanged"
+        QT_MOC_LITERAL(173, 5),  // "value"
+        QT_MOC_LITERAL(179, 34)   // "on_horizontalSlider_2_valueCh..."
     },
     "MainWindow",
     "slotTimer",
@@ -57,7 +69,13 @@ Q_CONSTINIT static const qt_meta_stringdata_MainWindow_t qt_meta_stringdata_Main
     "QAction*",
     "action",
     "clearScene",
-    "updatePerimeter"
+    "updatePerimeter",
+    "updateArea",
+    "updateCenterOfMass",
+    "moveFigureToCoordinates",
+    "on_horizontalSlider_valueChanged",
+    "value",
+    "on_horizontalSlider_2_valueChanged"
 };
 #undef QT_MOC_LITERAL
 } // unnamed namespace
@@ -68,7 +86,7 @@ Q_CONSTINIT static const uint qt_meta_data_MainWindow[] = {
       10,       // revision
        0,       // classname
        0,    0, // classinfo
-       4,   14, // methods
+       9,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -76,16 +94,26 @@ Q_CONSTINIT static const uint qt_meta_data_MainWindow[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,   38,    2, 0x08,    1 /* Private */,
-       3,    1,   39,    2, 0x08,    2 /* Private */,
-       6,    0,   42,    2, 0x08,    4 /* Private */,
-       7,    0,   43,    2, 0x08,    5 /* Private */,
+       1,    0,   68,    2, 0x08,    1 /* Private */,
+       3,    1,   69,    2, 0x08,    2 /* Private */,
+       6,    0,   72,    2, 0x08,    4 /* Private */,
+       7,    0,   73,    2, 0x08,    5 /* Private */,
+       8,    0,   74,    2, 0x08,    6 /* Private */,
+       9,    0,   75,    2, 0x08,    7 /* Private */,
+      10,    0,   76,    2, 0x08,    8 /* Private */,
+      11,    1,   77,    2, 0x08,    9 /* Private */,
+      13,    1,   80,    2, 0x08,   11 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
     QMetaType::Void, 0x80000000 | 4,    5,
     QMetaType::Void,
     QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void, QMetaType::Int,   12,
+    QMetaType::Void, QMetaType::Int,   12,
 
        0        // eod
 };
@@ -107,7 +135,19 @@ Q_CONSTINIT const QMetaObject MainWindow::staticMetaObject = { {
         // method 'clearScene'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'updatePerimeter'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'updateArea'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'updateCenterOfMass'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'moveFigureToCoordinates'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_horizontalSlider_valueChanged'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<int, std::false_type>,
+        // method 'on_horizontalSlider_2_valueChanged'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<int, std::false_type>
     >,
     nullptr
 } };
@@ -122,6 +162,11 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 1: _t->handleShapeSelection((*reinterpret_cast< std::add_pointer_t<QAction*>>(_a[1]))); break;
         case 2: _t->clearScene(); break;
         case 3: _t->updatePerimeter(); break;
+        case 4: _t->updateArea(); break;
+        case 5: _t->updateCenterOfMass(); break;
+        case 6: _t->moveFigureToCoordinates(); break;
+        case 7: _t->on_horizontalSlider_valueChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 8: _t->on_horizontalSlider_2_valueChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
@@ -157,13 +202,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 4)
+        if (_id < 9)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 4;
+        _id -= 9;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 4)
+        if (_id < 9)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 4;
+        _id -= 9;
     }
     return _id;
 }
